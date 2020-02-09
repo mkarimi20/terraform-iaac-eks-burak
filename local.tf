@@ -3,6 +3,6 @@ resource "null_resource" "login" {
     command = "aws eks --region ${var.region} update-kubeconfig --name ${var.cluster_name}"
     }
     provisioner "local-exec" {
-    command = "kubectl get nodes"
+    command = "/tmp/kubectl get nodes"
   }
 }
